@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import org.doit.domain.DeptVO;
-import org.doit.domain.EmpDeptSalGradeVo;
+import org.doit.domain.EmpDeptSalgradeVo;
 import org.doit.domain.EmpVO;
 import org.doit.domain.SalgradeVO;
 

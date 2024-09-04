@@ -22,9 +22,11 @@ public class DeptVO {
 	
 
 	// DeptVO
-	int deptno;
-	String dname;
-	String loc;
+	private int deptno;
+	private String dname;
+	private String loc;
+	
+	private int cnt;
 	
 
 	

@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import org.doit.domain.EmpDeptSalGradeVo;
+import org.doit.domain.EmpDeptSalgradeVo;
 import org.doit.domain.EmpVO;
 
 import com.util.DBConn;
@@ -41,8 +41,8 @@ public class Ex03 {
 				String dname;
 				int grade;
 				
-				ArrayList<EmpDeptSalGradeVo> list = new ArrayList<>();
-				EmpDeptSalGradeVo vo = null;
+				ArrayList<EmpDeptSalgradeVo> list = new ArrayList<>();
+				EmpDeptSalgradeVo vo = null;
 				
 				try {
 					conn = DBConn.getConnection();
@@ -57,7 +57,7 @@ public class Ex03 {
 						pay = rs.getDouble("pay");
 						grade = rs.getInt("grade");
 						
-						vo = new EmpDeptSalGradeVo(empno, ename, hiredate, pay, dname, grade);
+						vo = new EmpDeptSalgradeVo(empno, ename, hiredate, pay, dname, grade);
 						
 						list.add(vo);
 						

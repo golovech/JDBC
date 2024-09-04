@@ -15,7 +15,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class EmpDeptSalGradeVo {
+public class EmpDeptSalgradeVo {
 	
 //	private DeptVO dvo;
 //	private EmpVO evo;

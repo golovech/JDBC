@@ -12,8 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.doit.domain.EmpDeptSalGradeVo;
-import org.doit.domain.EmpDeptSalgradeVO;
+import org.doit.domain.EmpDeptSalgradeVo;
 import org.doit.domain.SalgradeVO;
 
 import com.util.DBConn;
@@ -36,10 +35,10 @@ import com.util.DBConn;
 	      PreparedStatement pstmt = null, empPstmt = null;
 	      ResultSet rs = null, empRs = null;
 	      SalgradeVO vo = null;                         // key
-	      ArrayList<EmpDeptSalGradeVo> empList = null;  // value      
-	      EmpDeptSalGradeVo empVo = null;
+	      ArrayList<EmpDeptSalgradeVo> empList = null;  // value      
+	      EmpDeptSalgradeVo empVo = null;
 
-	      LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalGradeVo>> map = new LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalGradeVo>>();
+	      LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalgradeVo>> map = new LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalgradeVo>>();
 
 	      conn = DBConn.getConnection();
 
@@ -61,10 +60,10 @@ import com.util.DBConn;
 	               empRs = empPstmt.executeQuery();
 
 	               if (empRs.next()) {
-	                  empList = new ArrayList<EmpDeptSalGradeVo>();
+	                  empList = new ArrayList<EmpDeptSalgradeVo>();
 	                  do {
 	                     //d.deptno, dname, empno, ename, sal
-	                     empVo = EmpDeptSalGradeVo
+	                     empVo = EmpDeptSalgradeVo
 	                           .builder()
 	                           .empno(empRs.getInt("empno"))
 	                           .dname(empRs.getString("dname"))
@@ -103,14 +102,14 @@ import com.util.DBConn;
 	   } // main
 
 	   private static void dispSalgrade(
-	         LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalgradeVO>> map) {
-	      Set<Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVO>>> set = map.entrySet();
-	      Iterator<Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVO>>> ir = set.iterator();
+	         LinkedHashMap<SalgradeVO, ArrayList<EmpDeptSalgradeVo>> map) {
+	      Set<Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVo>>> set = map.entrySet();
+	      Iterator<Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVo>>> ir = set.iterator();
 	      while (ir.hasNext()) {
-	         Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVO>> entry = 
+	         Entry<SalgradeVO, ArrayList<EmpDeptSalgradeVo>> entry = 
 	               ir.next();
 	         SalgradeVO vo =  entry.getKey();
-	         ArrayList<EmpDeptSalgradeVO> list = entry.getValue();
+	         ArrayList<EmpDeptSalgradeVo> list = entry.getValue();
 	         // 출력
 	         System.out.printf("%d등급   ( %d~%d ) - %d명\n"
 	               , vo.getGrade()
@@ -118,9 +117,9 @@ import com.util.DBConn;
 	               , vo.getHisal()
 	               , vo.getCnt());
 	         // 사원 출력
-	         Iterator<EmpDeptSalgradeVO> ir2 = list.iterator();
+	         Iterator<EmpDeptSalgradeVo> ir2 = list.iterator();
 	         while (ir2.hasNext()) {
-	            EmpDeptSalgradeVO empvo = ir2.next();
+	            EmpDeptSalgradeVo empvo = ir2.next();
 	            System.out.printf(
 	                  "\t\t%s\t%d\t%s\t%.2f\n"
 	                  , empvo.getDname()
@@ -147,3 +146,5 @@ import com.util.DBConn;
 	
 
 }
+	   
+	}
